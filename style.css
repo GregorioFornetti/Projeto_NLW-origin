@@ -7,6 +7,8 @@
 
 :root {
     font-size: 62.5%; /* 1rem = 10px */
+
+
     --cor-primaria: rgb(0, 133, 111);
     --cor-primaria-fraca: rgb(220, 233, 226);
     --cor-primaria-fraca-02: rgb(247, 250, 250);
@@ -16,6 +18,45 @@
     
     --cor-headline: rgb(33, 37, 41);
     --cor-paragrafo: rgb(73, 80, 87);
+
+
+    --nav-height: 7.2rem;
+    --mobile-max-width: 37.5rem;
+}
+
+body.menu-expanded > :not(header) {
+    display: none;
+}
+
+nav {
+    background-color: var(--cor-primaria-fraca);
+
+    position: fixed;
+    height: var(--nav-height);
+    top: 0;
+    width: 100%;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+nav > header {
+    max-width: var(--mobile-max-width);
+    height: 100%;
+    margin: auto;
+    padding: 0px 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
 }
 
 img {
@@ -29,8 +70,8 @@ body {
 }
 
 main {
-    max-width: 37.5rem;
-    margin: auto;
+    max-width: var(--mobile-max-width);
+    margin: var(--nav-height) auto auto auto;
 }
 
 h1 {
@@ -40,6 +81,58 @@ h1 {
     margin-bottom: 2.4rem;
 }
 
+.nav-on-scroll {
+    background-color: var(--cor-primaria);
+}
+
+.nav-on-scroll .logo path {
+    fill: white;
+}
+
+.nav-on-scroll button path {
+    stroke: white;
+}
+
+#mobile-menu {
+    height: 100vh;
+    background-color: var(--cor-primaria);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    padding-top: 6rem;
+    margin-bottom: 8rem;
+}
+
+.nav-list a {
+    color: var(--cor-secundaria-beige);
+    line-height: 3.1rem;
+    font-size: 2.4rem;
+    text-decoration: none;
+}
+
+.nav-list button {
+    background-color: white;
+
+    border-radius: 4rem;
+    padding: 16px 32px;
+
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.social-media-list {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+}
 
 .boas-vindas {
     color: var(--cor-primaria);
@@ -49,7 +142,6 @@ h1 {
 
 .hero-section {
     padding-top: 4.1rem;
-    background-color: var(--cor-primaria-fraca);
     text-align: center;
     padding: 4.1rem 2.4rem 0rem 2.4rem;
 }
@@ -98,6 +190,10 @@ h1 {
     border: 1px solid #DCE9E2;
     border-radius: 0.6rem;
 
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
     padding: 4rem 1rem;
 }
 
@@ -111,6 +207,7 @@ h1 {
     color: var(--cor-primaria);
 }
 
-#div-numeros div {
-    margin-bottom: 6rem;
+#first-two-sections-div {
+    background: linear-gradient( var(--cor-primaria-fraca) 108rem, var(--cor-primaria-fraca-02) 108rem);
+
 }
