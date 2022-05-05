@@ -19,6 +19,7 @@ function closeMenuMobile() {
     mobile_menu.classList.remove('mobile-menu-expanded')
 
     main_nav.classList.remove('nav-on-scroll')
+    changeNavColorOnScroll()
 }
 
 function openMenuMobile() {
@@ -36,6 +37,23 @@ function openMenuMobile() {
     main_nav.classList.add('nav-on-scroll')
 }
 
+function changeNavColorOnScroll() {
+    if (scrollY > 0 || menu_expanded) {
+        main_nav.classList.add('nav-on-scroll')
+    } else {
+        main_nav.classList.remove('nav-on-scroll')
+    }
+}
+
+function showBackToTopBtnOnScroll() {
+    let btn_backtotop = document.getElementById('backtotop-btn')
+    if (scrollY > 500 && !menu_expanded) {
+        btn_backtotop.classList.add('show-backtotop-btn')
+    } else {
+        btn_backtotop.classList.remove('show-backtotop-btn')
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     main_nav = document.getElementById('main-nav')
     btn_open = document.getElementById('open-menu-btn')
@@ -43,11 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobile_menu = document.getElementById('mobile-menu')
 
     document.addEventListener('scroll', () => {
-        if (scrollY > 0 || menu_expanded) {
-            main_nav.classList.add('nav-on-scroll')
-        } else {
-            main_nav.classList.remove('nav-on-scroll')
-        }
+        changeNavColorOnScroll()
+        showBackToTopBtnOnScroll()
     })
 
     btn_open.addEventListener('click', openMenuMobile)
