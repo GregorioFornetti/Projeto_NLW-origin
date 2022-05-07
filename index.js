@@ -1,6 +1,6 @@
 
 var menu_expanded = false
-var main_nav
+var main_header
 var btn_open
 var btn_close
 var mobile_menu
@@ -18,7 +18,7 @@ function closeMenuMobile() {
     mobile_menu.classList.add('mobile-menu-collapsed')
     mobile_menu.classList.remove('mobile-menu-expanded')
 
-    main_nav.classList.remove('nav-on-scroll')
+    main_header.classList.remove('nav-on-scroll')
     changeNavColorOnScroll()
 }
 
@@ -34,14 +34,14 @@ function openMenuMobile() {
     mobile_menu.classList.remove('mobile-menu-collapsed')
     mobile_menu.classList.add('mobile-menu-expanded')
 
-    main_nav.classList.add('nav-on-scroll')
+    main_header.classList.add('nav-on-scroll')
 }
 
 function changeNavColorOnScroll() {
     if (scrollY > 0 || menu_expanded) {
-        main_nav.classList.add('nav-on-scroll')
+        main_header.classList.add('nav-on-scroll')
     } else {
-        main_nav.classList.remove('nav-on-scroll')
+        main_header.classList.remove('nav-on-scroll')
     }
 }
 
@@ -55,7 +55,7 @@ function showBackToTopBtnOnScroll() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    main_nav = document.getElementById('main-nav')
+    main_header = document.getElementById('main-header')
     btn_open = document.getElementById('open-menu-btn')
     btn_close = document.getElementById('close-menu-btn')
     mobile_menu = document.getElementById('mobile-menu')
@@ -68,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     btn_open.addEventListener('click', openMenuMobile)
 
     btn_close.addEventListener('click', closeMenuMobile)
-    document.getElementById('btn-inicio').addEventListener('click', closeMenuMobile)
-    document.getElementById('btn-sobre').addEventListener('click', closeMenuMobile)
-    document.getElementById('btn-servicos').addEventListener('click', closeMenuMobile)
-    document.getElementById('btn-depoimentos').addEventListener('click', closeMenuMobile)
+    mobile_menu.querySelector('.btn-inicio').addEventListener('click', closeMenuMobile)
+    mobile_menu.querySelector('.btn-sobre').addEventListener('click', closeMenuMobile)
+    mobile_menu.querySelector('.btn-servicos').addEventListener('click', closeMenuMobile)
+    mobile_menu.querySelector('.btn-depoimentos').addEventListener('click', closeMenuMobile)
 
     ScrollReveal({
         origin: 'right',
