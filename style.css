@@ -44,6 +44,11 @@ main {
     margin: auto;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 section {
     padding: 10rem 2.4rem;
 }
@@ -389,8 +394,7 @@ nav > header {
 
 footer {
     background-color: var(--cor-primaria);
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding: 6rem 2.4rem;
 }
 
 .wrapper {
@@ -421,7 +425,7 @@ footer .social-media-list {
 #backtotop-btn {
     position: fixed;
     top: 93%;
-    left: 90%;
+    left: 87%;
 
     transition: 700ms;
     opacity: 0;
@@ -439,11 +443,6 @@ footer .social-media-list {
 @media (min-width: 1024px) {
     .wrapper {
         max-width: 102.4rem;
-    }
-
-    img {
-        width: 100%;
-        height: auto;
     }
 
     h1 {

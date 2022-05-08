@@ -83,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
         activeSectionButtonOnScroll()
     })
 
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            closeMenuMobile()
+        }
+    })
+
     btn_open.addEventListener('click', openMenuMobile)
 
     btn_close.addEventListener('click', closeMenuMobile)
