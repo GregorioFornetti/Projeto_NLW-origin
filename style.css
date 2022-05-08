@@ -441,10 +441,29 @@ footer .social-media-list {
         max-width: 102.4rem;
     }
 
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.4rem;
+    }
+
     /* ============= BARRA DE NAVEGAÇÃO =================== */
     #mobile-menu .social-media-list,
     nav .toggle-buttons {
         display: none;
+    }
+
+    header .wrapper {
+        padding-bottom: 0;
+        padding-top: 2.5rem;
+        align-items: flex-start;
     }
 
     #mobile-menu {
@@ -456,7 +475,6 @@ footer .social-media-list {
     }
     
     .nav-list {
-        align-items: center;
         flex-direction: row;
         gap: 4.8rem;
     
@@ -480,6 +498,7 @@ footer .social-media-list {
         font-size: 1.6rem;
         color: var(--cor-primaria);
         line-height: 2.1rem;
+        padding-bottom: 2.4rem;
     }
 
     .nav-on-scroll #desktop-nav-list a {
@@ -493,6 +512,7 @@ footer .social-media-list {
 
         color: var(--cor-primaria);
         text-transform: uppercase;
+        margin-top: -1rem;
     }
 
     .nav-on-scroll #desktop-agendar-btn {
@@ -502,5 +522,104 @@ footer .social-media-list {
 
     #desktop-agendar-btn {
         display: block;
+    }
+
+    #desktop-nav-list a.active {
+        border-bottom: 0.2rem solid var(--cor-primaria);
+        font-weight: 700;
+    }
+
+    .nav-on-scroll #desktop-nav-list a.active {
+        border-color: var(--cor-primaria-fraca-02);
+    }
+
+    /* =================== INICIO SECTION =================== */
+
+    #inicio-section .wrapper {
+        display: grid;
+        grid-template-columns: 4fr 3fr;
+        align-items: center;
+        column-gap: 5.1rem;
+    }
+
+    .div-texto-intro {
+        text-align: left;
+    }
+
+    #div-numeros {
+        grid-column: 1 / span 2;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10rem;
+
+        margin-top: -4rem;
+    }
+
+    .divisoria-no-desktop {
+        border-left: 2px solid var(--cor-primaria);
+    }
+
+    #inicio-section img {
+        padding-right: 5rem;
+    }
+
+    #inicio-section a {
+        margin: 3.2rem 0 8.4rem 0;
+    }
+
+    #first-two-sections-div {
+        background: linear-gradient( var(--cor-primaria-fraca) 65rem, var(--cor-primaria-fraca-02) 65rem);
+    }
+
+    /* =================== SERVIÇOS SECTION =================== */
+    .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #servicos-section h2 {
+        margin: auto;
+        width: 41.7rem;
+    }
+
+    /* =================== SOBRE SECTION ======================= */
+    #sobre-section .wrapper {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 3fr 4fr;
+        column-gap: 6.7rem;
+    }
+
+    #sobre-section div {
+        grid-column: 2;
+    }
+
+    #sobre-section img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #sobre-section p {
+        margin-bottom: 0;
+    }
+
+    /* =================== CONTATO SECTION ====================== */
+
+    #contato-section .wrapper {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 14.1rem;
+        align-items: center;
+    }
+
+    #contato-section .btn-agendamento {
+        margin-bottom: 0;
+    }
+
+    /* ================= FOOTER ====================== */
+    footer .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }

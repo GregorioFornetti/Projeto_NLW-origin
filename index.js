@@ -4,7 +4,9 @@ var main_header
 var btn_open
 var btn_close
 var mobile_menu
-
+var inicio_section
+var desktop_nav_list
+var nav_links_list
 
 
 function closeMenuMobile() {
@@ -45,6 +47,20 @@ function changeNavColorOnScroll() {
     }
 }
 
+function activeSectionButtonOnScroll() {
+    for (objeto_nav of nav_links_list) {
+        objeto_nav.button.classList.remove('active')
+    }
+    for (objeto_nav of nav_links_list) {
+        let rect = objeto_nav.section.getBoundingClientRect()
+        let meio = rect.top + ((rect.bottom - rect.top) / 2)
+        if (window.innerHeight / 1.5 >= meio) {
+            objeto_nav.button.classList.add('active')
+            break
+        }
+    }
+}
+
 function showBackToTopBtnOnScroll() {
     let btn_backtotop = document.getElementById('backtotop-btn')
     if (scrollY > 500 && !menu_expanded) {
@@ -59,10 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn_open = document.getElementById('open-menu-btn')
     btn_close = document.getElementById('close-menu-btn')
     mobile_menu = document.getElementById('mobile-menu')
+    desktop_nav_list = document.getElementById('desktop-nav-list')
 
     document.addEventListener('scroll', () => {
         changeNavColorOnScroll()
         showBackToTopBtnOnScroll()
+        activeSectionButtonOnScroll()
     })
 
     btn_open.addEventListener('click', openMenuMobile)
@@ -81,4 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
         .card,
         #div-numeros
     `)
+
+    nav_links_list = [
+        {
+            'section': document.getElementById('inicio-section'),
+            'button': desktop_nav_list.querySelector('.btn-inicio')
+        },
+        {
+            'section': document.getElementById('servicos-section'),
+            'button': desktop_nav_list.querySelector('.btn-servicos')
+        },
+        {
+            'section': document.getElementById('sobre-section'),
+            'button': desktop_nav_list.querySelector('.btn-sobre')
+        }
+    ].reverse()
 })
